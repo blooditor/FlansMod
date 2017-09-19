@@ -1,20 +1,17 @@
 package com.flansmod.client.gui.teams;
 
-import net.minecraft.client.gui.GuiButton;
-import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.relauncher.Side;
-
 import org.lwjgl.opengl.GL11;
 
 import com.flansmod.client.teams.ClientTeamsData;
 import com.flansmod.common.FlansMod;
-import com.flansmod.common.PlayerHandler;
 import com.flansmod.common.teams.LoadoutPool;
 import com.flansmod.common.teams.PlayerRankData;
-import com.flansmod.common.teams.Team;
 import com.flansmod.common.teams.TeamsManagerRanked;
+
+import net.minecraft.client.gui.GuiButton;
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class GuiChooseLoadout extends GuiTeamsBase 
 {

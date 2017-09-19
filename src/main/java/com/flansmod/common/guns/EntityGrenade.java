@@ -2,10 +2,23 @@ package com.flansmod.common.guns;
 
 import java.util.List;
 
+import com.flansmod.client.FlansModClient;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.FlansModExplosion;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.RotatedAxes;
+import com.flansmod.common.driveables.EntityDriveable;
+import com.flansmod.common.network.PacketFlak;
+import com.flansmod.common.network.PacketPlaySound;
+import com.flansmod.common.teams.ItemTeamArmour;
+import com.flansmod.common.teams.Team;
+import com.flansmod.common.teams.TeamsManager;
+import com.flansmod.common.types.InfoType;
+import com.flansmod.common.vector.Vector3f;
+
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.EntityFX;
 import net.minecraft.entity.Entity;
@@ -24,27 +37,9 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.world.World;
-
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-
-import com.flansmod.client.FlansModClient;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.FlansModExplosion;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.RotatedAxes;
-import com.flansmod.common.driveables.EntityDriveable;
-import com.flansmod.common.network.PacketFlak;
-import com.flansmod.common.network.PacketPlaySound;
-import com.flansmod.common.teams.ItemTeamArmour;
-import com.flansmod.common.teams.Team;
-import com.flansmod.common.teams.TeamsManager;
-import com.flansmod.common.types.InfoType;
-import com.flansmod.common.vector.Vector3f;
 
 public class EntityGrenade extends EntityShootable implements IEntityAdditionalSpawnData
 {

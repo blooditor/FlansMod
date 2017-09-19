@@ -1,35 +1,12 @@
 package com.flansmod.client.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import org.lwjgl.opengl.GL11;
-
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.WorldRenderer;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.texture.TextureManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.MathHelper;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.IItemRenderer;
 
 import com.flansmod.client.FlansModClient;
 import com.flansmod.client.FlansModResourceHandler;
-import com.flansmod.common.FlansMod;
 import com.flansmod.common.PlayerData;
 import com.flansmod.common.PlayerHandler;
 import com.flansmod.common.guns.AttachmentType;
-import com.flansmod.common.guns.BulletType;
 import com.flansmod.common.guns.EnumFireMode;
 import com.flansmod.common.guns.GunType;
 import com.flansmod.common.guns.IScope;
@@ -39,6 +16,13 @@ import com.flansmod.common.guns.Paintjob;
 import com.flansmod.common.types.PaintableType;
 import com.flansmod.common.vector.Vector3f;
 
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.MathHelper;
+import net.minecraftforge.client.IItemRenderer;
 import net.minecraftforge.fml.relauncher.Side;
 
 public class RenderGun implements IItemRenderer

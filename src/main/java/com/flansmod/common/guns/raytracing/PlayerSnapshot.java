@@ -13,11 +13,11 @@ import com.flansmod.common.guns.raytracing.FlansModRaytracer.BulletHit;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer.PlayerBulletHit;
 import com.flansmod.common.vector.Vector3f;
 
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.MathHelper;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /** This class takes a snapshot of the player's position rotation and held items at a certain point in time. 
  * It is used to handle bullet detection. The server will store a second or two of snapshots so that it 

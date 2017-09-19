@@ -1,20 +1,16 @@
 package com.flansmod.common;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 
+import com.flansmod.common.guns.ItemGun;
+import com.flansmod.common.teams.TeamsManager;
+
 import net.minecraft.entity.item.EntityItem;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.world.WorldServer;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
-
-import com.flansmod.common.guns.ItemGun;
-import com.flansmod.common.teams.TeamsManager;
 
 public class CommonTickHandler 
 {

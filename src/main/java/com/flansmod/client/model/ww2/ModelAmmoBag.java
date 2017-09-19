@@ -9,11 +9,10 @@
 
 package com.flansmod.client.model.ww2;
 
+import com.flansmod.client.tmt.ModelRendererTurbo;
+
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.entity.Entity;
-import com.flansmod.client.tmt.ModelRendererTurbo;
-import com.flansmod.client.tmt.Coord2D;
-import com.flansmod.client.tmt.Shape2D;
 
 public class ModelAmmoBag extends ModelBase
 {

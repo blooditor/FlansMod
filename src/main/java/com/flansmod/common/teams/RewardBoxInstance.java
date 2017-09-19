@@ -1,8 +1,8 @@
 package com.flansmod.common.teams;
 
-import net.minecraft.entity.player.EntityPlayer;
-
 import com.flansmod.common.FlansMod;
+
+import net.minecraft.entity.player.EntityPlayer;
 
 /** A player keeps this instance forever, even after they've opened it so as to keep a history */
 public class RewardBoxInstance 

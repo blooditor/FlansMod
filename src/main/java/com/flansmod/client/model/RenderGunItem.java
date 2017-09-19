@@ -3,14 +3,11 @@ package com.flansmod.client.model;
 import com.flansmod.common.guns.ItemGun;
 
 import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderEntityItem;
 import net.minecraft.client.renderer.entity.RenderItem;
 import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer.ItemRenderType;
 
 public class RenderGunItem extends RenderEntityItem 

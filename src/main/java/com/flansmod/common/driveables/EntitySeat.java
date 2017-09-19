@@ -2,6 +2,21 @@ package com.flansmod.common.driveables;
 
 import java.util.List;
 
+import com.flansmod.api.IControllable;
+import com.flansmod.client.FlansModClient;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.RotatedAxes;
+import com.flansmod.common.guns.EnumFireMode;
+import com.flansmod.common.guns.GunType;
+import com.flansmod.common.guns.ItemShootable;
+import com.flansmod.common.guns.ShootableType;
+import com.flansmod.common.network.PacketDriveableKey;
+import com.flansmod.common.network.PacketDriveableKeyHeld;
+import com.flansmod.common.network.PacketPlaySound;
+import com.flansmod.common.network.PacketSeatUpdates;
+import com.flansmod.common.teams.TeamsManager;
+import com.flansmod.common.tools.ItemTool;
+import com.flansmod.common.vector.Vector3f;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.client.Minecraft;
@@ -20,22 +35,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.api.IControllable;
-import com.flansmod.client.FlansModClient;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.RotatedAxes;
-import com.flansmod.common.guns.EnumFireMode;
-import com.flansmod.common.guns.GunType;
-import com.flansmod.common.guns.ItemShootable;
-import com.flansmod.common.guns.ShootableType;
-import com.flansmod.common.network.PacketDriveableKey;
-import com.flansmod.common.network.PacketDriveableKeyHeld;
-import com.flansmod.common.network.PacketPlaySound;
-import com.flansmod.common.network.PacketSeatUpdates;
-import com.flansmod.common.teams.TeamsManager;
-import com.flansmod.common.tools.ItemTool;
-import com.flansmod.common.vector.Vector3f;
 
 public class EntitySeat extends Entity implements IControllable, IEntityAdditionalSpawnData
 {

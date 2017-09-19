@@ -1,5 +1,14 @@
 package com.flansmod.common.driveables;
 
+import com.flansmod.api.IExplodeable;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.network.PacketDriveableKey;
+import com.flansmod.common.network.PacketPlaySound;
+import com.flansmod.common.network.PacketVehicleControl;
+import com.flansmod.common.teams.TeamsManager;
+import com.flansmod.common.tools.ItemTool;
+import com.flansmod.common.vector.Vector3f;
+
 import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,16 +19,6 @@ import net.minecraft.util.DamageSource;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-
-import com.flansmod.api.IExplodeable;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.network.PacketDriveableKey;
-import com.flansmod.common.network.PacketPlaySound;
-import com.flansmod.common.network.PacketVehicleControl;
-import com.flansmod.common.teams.TeamsManager;
-import com.flansmod.common.tools.ItemTool;
-import com.flansmod.common.vector.Vector3f;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 

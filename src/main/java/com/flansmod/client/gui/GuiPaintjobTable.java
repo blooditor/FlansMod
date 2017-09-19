@@ -3,40 +3,21 @@ package com.flansmod.client.gui;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.nio.ByteBuffer;
 import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-import org.lwjgl.BufferUtils;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.texture.DynamicTexture;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.client.IItemRenderer.ItemRenderType;
-
 import com.flansmod.client.ClientProxy;
 import com.flansmod.client.FlansModResourceHandler;
-import com.flansmod.client.model.GunAnimations;
 import com.flansmod.client.model.ModelAttachment;
 import com.flansmod.client.model.ModelDriveable;
-import com.flansmod.client.model.ModelPlane;
 import com.flansmod.client.model.RenderGun;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.RotatedAxes;
 import com.flansmod.common.driveables.DriveableType;
-import com.flansmod.common.guns.GunType;
-import com.flansmod.common.guns.ItemGun;
 import com.flansmod.common.guns.Paintjob;
 import com.flansmod.common.network.PacketGunPaint;
 import com.flansmod.common.paintjob.ContainerPaintjobTable;
@@ -45,6 +26,17 @@ import com.flansmod.common.types.EnumType;
 import com.flansmod.common.types.IPaintableItem;
 import com.flansmod.common.types.PaintableType;
 import com.flansmod.common.vector.Vector3f;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.texture.DynamicTexture;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraftforge.client.IItemRenderer.ItemRenderType;
 
 public class GuiPaintjobTable extends GuiContainer 
 {

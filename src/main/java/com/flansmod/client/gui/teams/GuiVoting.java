@@ -5,7 +5,6 @@ import org.lwjgl.opengl.GL11;
 import com.flansmod.client.teams.ClientTeamsData;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.network.PacketVoteCast;
-import com.flansmod.common.network.PacketVoting;
 
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;

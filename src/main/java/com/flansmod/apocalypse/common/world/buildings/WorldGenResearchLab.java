@@ -9,19 +9,15 @@ import com.flansmod.common.FlansMod;
 import com.flansmod.common.ModuloHelper;
 import com.flansmod.common.TileEntityItemHolder;
 import com.flansmod.common.driveables.DriveableData;
-import com.flansmod.common.driveables.DriveableType;
-import com.flansmod.common.driveables.EntityDriveable;
 import com.flansmod.common.driveables.EnumDriveablePart;
 import com.flansmod.common.driveables.mechas.EnumMechaSlotType;
 import com.flansmod.common.driveables.mechas.MechaType;
-import com.flansmod.common.guns.BulletType;
 import com.flansmod.common.guns.GunType;
 import com.flansmod.common.guns.ItemGun;
 import com.flansmod.common.guns.ShootableType;
 
 import net.minecraft.block.BlockChest;
 import net.minecraft.block.BlockFlowerPot;
-import net.minecraft.block.BlockTorch;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
@@ -33,7 +29,6 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.world.EnumSkyBlock;
 import net.minecraft.world.World;
-import net.minecraft.world.gen.feature.WorldGenerator;
 
 public class WorldGenResearchLab extends WorldGenFlan 
 {

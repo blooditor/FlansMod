@@ -1,14 +1,12 @@
 package com.flansmod.apocalypse.common.entity;
 
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.util.BlockPos;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.BiomeGenBase;
-
 import com.flansmod.apocalypse.common.world.BiomeGenApocalypse;
 import com.flansmod.common.driveables.DriveableData;
 import com.flansmod.common.driveables.EntityPlane;
 import com.flansmod.common.driveables.PlaneType;
+
+import net.minecraft.world.World;
+import net.minecraft.world.biome.BiomeGenBase;
 
 public class EntityFlyByPlane extends EntityPlane 
 {

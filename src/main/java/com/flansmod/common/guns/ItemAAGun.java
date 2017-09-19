@@ -2,11 +2,14 @@ package com.flansmod.common.guns;
 
 import java.util.ArrayList;
 
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.types.IFlanItem;
+import com.flansmod.common.types.InfoType;
+
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.MovingObjectPosition;
@@ -16,10 +19,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.types.IFlanItem;
-import com.flansmod.common.types.InfoType;
 
 public class ItemAAGun extends Item implements IFlanItem
 {

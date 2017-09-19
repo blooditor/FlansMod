@@ -2,26 +2,6 @@ package com.flansmod.client.model;
 
 import org.lwjgl.opengl.GL11;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.client.renderer.culling.Frustum;
-import net.minecraft.client.renderer.culling.ICamera;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.client.IItemRenderer;
-import net.minecraftforge.client.event.RenderWorldLastEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-
 import com.flansmod.client.FlansModResourceHandler;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.driveables.DriveablePart;
@@ -33,6 +13,23 @@ import com.flansmod.common.driveables.ItemPlane;
 import com.flansmod.common.driveables.PlaneType;
 import com.flansmod.common.driveables.Propeller;
 import com.flansmod.common.guns.Paintjob;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.OpenGlHelper;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.client.renderer.culling.ICamera;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraftforge.client.IItemRenderer;
+import net.minecraftforge.client.event.RenderWorldLastEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 public class RenderPlane extends Render implements IItemRenderer 
 {	

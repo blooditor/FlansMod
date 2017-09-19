@@ -1,17 +1,16 @@
 package com.flansmod.common.teams;
 
+import com.flansmod.common.FlansMod;
+import com.mojang.authlib.GameProfile;
+
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
-import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumChatFormatting;
-
-import com.flansmod.common.FlansMod;
-import com.mojang.authlib.GameProfile;
 
 public class CommandTeams extends CommandBase 
 {

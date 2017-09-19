@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import org.lwjgl.opengl.GL11;
 
 import com.flansmod.client.FlansModResourceHandler;
-import com.flansmod.common.FlansMod;
 import com.flansmod.common.guns.BulletType;
 import com.flansmod.common.vector.Vector3f;
 

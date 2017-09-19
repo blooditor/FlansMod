@@ -13,8 +13,6 @@ import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 
 public class EntityTeleporter extends Entity 
 {

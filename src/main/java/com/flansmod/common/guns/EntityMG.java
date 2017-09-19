@@ -4,10 +4,18 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import io.netty.buffer.ByteBuf;
-
 import org.lwjgl.input.Mouse;
 
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.network.PacketMGFire;
+import com.flansmod.common.network.PacketMGMount;
+import com.flansmod.common.network.PacketPlaySound;
+import com.flansmod.common.teams.EntityGunItem;
+import com.flansmod.common.teams.Team;
+import com.flansmod.common.teams.TeamsManager;
+
+import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
@@ -25,15 +33,6 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.network.PacketMGFire;
-import com.flansmod.common.network.PacketMGMount;
-import com.flansmod.common.network.PacketPlaySound;
-import com.flansmod.common.teams.EntityGunItem;
-import com.flansmod.common.teams.Team;
-import com.flansmod.common.teams.TeamsManager;
 
 public class EntityMG extends Entity implements IEntityAdditionalSpawnData
 {

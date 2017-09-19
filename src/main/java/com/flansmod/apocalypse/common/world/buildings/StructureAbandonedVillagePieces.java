@@ -1,15 +1,14 @@
 package com.flansmod.apocalypse.common.world.buildings;
 
-import com.flansmod.apocalypse.common.FlansModApocalypse;
-import com.flansmod.common.BlockItemHolder;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.TileEntityItemHolder;
-import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
+
+import com.flansmod.apocalypse.common.FlansModApocalypse;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.TileEntityItemHolder;
+import com.google.common.collect.Lists;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSandStone;
@@ -17,31 +16,23 @@ import net.minecraft.block.BlockStairs;
 import net.minecraft.block.BlockTorch;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.MathHelper;
-import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.biome.WorldChunkManager;
 import net.minecraft.world.gen.structure.MapGenStructureIO;
-import net.minecraft.world.gen.structure.MapGenVillage;
 import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraft.world.gen.structure.StructureComponent;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
-import net.minecraftforge.common.ChestGenHooks;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.BiomeEvent;
-import static net.minecraftforge.common.ChestGenHooks.*;
+import net.minecraftforge.fml.common.eventhandler.Event.Result;
 
 public class StructureAbandonedVillagePieces
 {

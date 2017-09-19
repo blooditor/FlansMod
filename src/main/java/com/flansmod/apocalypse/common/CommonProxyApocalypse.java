@@ -1,9 +1,7 @@
 package com.flansmod.apocalypse.common;
 
-import java.io.File;
 import java.util.EnumSet;
 import java.util.HashMap;
-import java.util.List;
 
 import com.flansmod.apocalypse.common.entity.EntityAIMecha;
 import com.flansmod.apocalypse.common.entity.EntityFakePlayer;
@@ -17,16 +15,12 @@ import com.flansmod.apocalypse.common.world.TeleporterApocalypse;
 import com.flansmod.apocalypse.common.world.buildings.StructureAbandonedVillagePieces;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.driveables.DriveableData;
-import com.flansmod.common.driveables.EntitySeat;
 import com.flansmod.common.driveables.EnumDriveablePart;
 import com.flansmod.common.driveables.PlaneType;
 import com.flansmod.common.driveables.mechas.EntityMecha;
 import com.flansmod.common.parts.PartType;
-import com.flansmod.common.teams.EntityGunItem;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EnumCreatureType;
 import net.minecraft.entity.monster.EntitySkeleton;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
@@ -36,21 +30,16 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.play.server.S08PacketPlayerPosLook;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.tileentity.TileEntityChest;
 import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldServer;
-import net.minecraftforge.common.DimensionManager;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
-import net.minecraftforge.event.entity.living.LivingSpawnEvent;
-import net.minecraftforge.event.world.WorldEvent;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent.PlayerRespawnEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;

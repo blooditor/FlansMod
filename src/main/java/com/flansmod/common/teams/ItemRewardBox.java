@@ -3,7 +3,6 @@ package com.flansmod.common.teams;
 import java.util.List;
 
 import com.flansmod.common.FlansMod;
-import com.flansmod.common.parts.EnumPartCategory;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;

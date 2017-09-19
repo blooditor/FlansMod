@@ -1,19 +1,13 @@
 package com.flansmod.apocalypse.common.world.buildings;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
 import com.flansmod.apocalypse.common.world.BiomeGenApocalypse;
-import com.flansmod.apocalypse.common.world.buildings.StructureAbandonedVillagePieces.Field1;
-import com.flansmod.apocalypse.common.world.buildings.StructureAbandonedVillagePieces.Field2;
-import com.flansmod.apocalypse.common.world.buildings.StructureAbandonedVillagePieces.Well;
 
-import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.gen.structure.MapGenStructure;

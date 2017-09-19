@@ -2,24 +2,9 @@ package com.flansmod.client;
 
 import org.lwjgl.input.Keyboard;
 
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.gui.GuiChat;
-import net.minecraft.client.settings.KeyBinding;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.client.event.MouseEvent;
-import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import com.flansmod.api.IControllable;
 import com.flansmod.client.gui.teams.GuiLandingPage;
 import com.flansmod.client.gui.teams.GuiTeamScores;
-import com.flansmod.client.gui.teams.GuiTeamSelect;
 import com.flansmod.client.model.GunAnimations;
 import com.flansmod.client.model.GunAnimations.LookAtState;
 import com.flansmod.common.FlansMod;
@@ -29,6 +14,18 @@ import com.flansmod.common.guns.GunType;
 import com.flansmod.common.guns.ItemGun;
 import com.flansmod.common.network.PacketReload;
 import com.flansmod.common.network.PacketRequestDebug;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiChat;
+import net.minecraft.client.settings.KeyBinding;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.client.FMLClientHandler;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.gameevent.InputEvent.KeyInputEvent;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(value = Side.CLIENT)
 public class KeyInputHandler

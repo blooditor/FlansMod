@@ -1,11 +1,5 @@
 package com.flansmod.client.teams;
 
-import net.minecraft.client.Minecraft;
-import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.common.FMLCommonHandler;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import com.flansmod.client.gui.teams.GuiEditLoadout;
 import com.flansmod.client.gui.teams.GuiLandingPage;
 import com.flansmod.client.gui.teams.GuiMissionResults;
@@ -20,7 +14,9 @@ import com.flansmod.common.teams.LoadoutPool;
 import com.flansmod.common.teams.PlayerRankData;
 import com.flansmod.common.teams.RewardBoxInstance;
 import com.flansmod.common.teams.RoundFinishedData;
-import com.flansmod.common.teams.TeamsManagerRanked;
+
+import net.minecraft.client.Minecraft;
+import net.minecraftforge.fml.client.FMLClientHandler;
 
 public class ClientTeamsData 
 {

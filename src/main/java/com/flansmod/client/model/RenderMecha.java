@@ -3,28 +3,6 @@ package com.flansmod.client.model;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL12;
 
-import net.minecraft.block.Block;
-import net.minecraft.client.Minecraft;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.ItemRenderer;
-import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.texture.TextureManager;
-import net.minecraft.client.resources.model.IBakedModel;
-import net.minecraft.client.resources.model.ModelManager;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.item.EntityItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.AxisAlignedBB;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.client.IItemRenderer;
-import net.minecraftforge.client.IItemRenderer.ItemRenderType;
-import net.minecraftforge.client.IItemRenderer.ItemRendererHelper;
-
 import com.flansmod.client.ClientProxy;
 import com.flansmod.client.FlansModResourceHandler;
 import com.flansmod.common.FlansMod;
@@ -42,6 +20,20 @@ import com.flansmod.common.driveables.mechas.MechaType;
 import com.flansmod.common.guns.GunType;
 import com.flansmod.common.guns.ItemGun;
 import com.flansmod.common.guns.Paintjob;
+
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.ItemRenderer;
+import net.minecraft.client.renderer.entity.Render;
+import net.minecraft.client.renderer.entity.RenderItem;
+import net.minecraft.client.renderer.entity.RenderManager;
+import net.minecraft.client.renderer.texture.TextureManager;
+import net.minecraft.client.resources.model.IBakedModel;
+import net.minecraft.entity.Entity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.AxisAlignedBB;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.IItemRenderer;
 
 public class RenderMecha extends Render implements IItemRenderer
 {

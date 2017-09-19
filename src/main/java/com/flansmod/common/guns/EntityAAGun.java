@@ -1,9 +1,17 @@
 package com.flansmod.common.guns;
 
-import io.netty.buffer.ByteBuf;
-
 import org.lwjgl.input.Mouse;
 
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.PlayerData;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.network.PacketAAGunAngles;
+import com.flansmod.common.network.PacketMGFire;
+import com.flansmod.common.network.PacketPlaySound;
+import com.flansmod.common.teams.Team;
+import com.flansmod.common.teams.TeamsManager;
+
+import io.netty.buffer.ByteBuf;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.monster.EntityMob;
 import net.minecraft.entity.player.EntityPlayer;
@@ -20,16 +28,6 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.PlayerData;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.network.PacketAAGunAngles;
-import com.flansmod.common.network.PacketMGFire;
-import com.flansmod.common.network.PacketPlaySound;
-import com.flansmod.common.teams.Team;
-import com.flansmod.common.teams.TeamsManager;
-import com.flansmod.common.vector.Vector3f;
 
 public class EntityAAGun extends Entity implements IEntityAdditionalSpawnData
 {

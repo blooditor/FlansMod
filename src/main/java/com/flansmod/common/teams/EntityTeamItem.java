@@ -1,7 +1,9 @@
 package com.flansmod.common.teams;
 
+import com.flansmod.common.EntityItemCustomRender;
+import com.flansmod.common.PlayerHandler;
+
 import io.netty.buffer.ByteBuf;
-import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -13,9 +15,6 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
-
-import com.flansmod.common.EntityItemCustomRender;
-import com.flansmod.common.PlayerHandler;
 
 public class EntityTeamItem extends EntityItemCustomRender implements IEntityAdditionalSpawnData {
 

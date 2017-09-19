@@ -2,11 +2,6 @@ package com.flansmod.common.teams;
 
 import java.util.ArrayList;
 
-import io.netty.buffer.ByteBuf;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.common.network.ByteBufUtils;
-
 import com.flansmod.client.gui.teams.EnumLoadoutSlot;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.guns.GunType;
@@ -14,6 +9,11 @@ import com.flansmod.common.guns.Paintjob;
 import com.flansmod.common.teams.LoadoutPool.LoadoutEntryInfoType;
 import com.flansmod.common.types.IFlanItem;
 import com.flansmod.common.types.InfoType;
+
+import io.netty.buffer.ByteBuf;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.fml.common.network.ByteBufUtils;
 
 public class PlayerLoadout 
 {

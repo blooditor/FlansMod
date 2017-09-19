@@ -4,28 +4,25 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import com.flansmod.client.model.ModelDriveable;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.guns.BulletType;
+import com.flansmod.common.guns.EnumFireMode;
+import com.flansmod.common.parts.PartType;
+import com.flansmod.common.types.PaintableType;
+import com.flansmod.common.types.TypeFile;
+import com.flansmod.common.vector.Vector3f;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.client.FlansModClient;
-import com.flansmod.client.model.ModelDriveable;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.guns.BulletType;
-import com.flansmod.common.guns.EnumFireMode;
-import com.flansmod.common.parts.PartType;
-import com.flansmod.common.types.InfoType;
-import com.flansmod.common.types.PaintableType;
-import com.flansmod.common.types.TypeFile;
-import com.flansmod.common.vector.Vector3f;
 
 public abstract class DriveableType extends PaintableType
 {

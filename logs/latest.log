@@ -1,0 +1,89 @@
+[21:21:49] [Client thread/INFO]: Setting user: Player392
+[21:21:52] [Client thread/INFO]: LWJGL Version: 2.9.1
+[21:21:57] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Flan's Mod: Apocalypse, FMLFileResourcePack:Flan's Mod
+[21:21:58] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Flan's Mod: Apocalypse, FMLFileResourcePack:Flan's Mod
+[21:21:58] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[21:21:58] [Thread-9/INFO]: Initializing LWJGL OpenAL
+[21:21:58] [Thread-9/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[21:21:59] [Thread-9/INFO]: OpenAL initialized.
+[21:21:59] [Sound Library Loader/INFO]: Sound engine started
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet1.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet2.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet3.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet4.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair1.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair2.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair3.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair4.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair5.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair6.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair7.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet1.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet2.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet3.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bullet4.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair1.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair2.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair3.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair4.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair5.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair6.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:00] [Client thread/WARN]: File flansmod:sounds/bulletair7.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:01] [Client thread/INFO]: Created: 16x16 textures-atlas
+[21:22:02] [Client thread/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Flan's Mod: Apocalypse, FMLFileResourcePack:Flan's Mod
+[21:22:02] [Client thread/INFO]: SoundSystem shutting down...
+[21:22:02] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com
+[21:22:02] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[21:22:02] [Thread-11/INFO]: Initializing LWJGL OpenAL
+[21:22:02] [Thread-11/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[21:22:02] [Thread-11/INFO]: OpenAL initialized.
+[21:22:03] [Sound Library Loader/INFO]: Sound engine started
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet1.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet2.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet3.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet4.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair1.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair2.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair3.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair4.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair5.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair6.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair7.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet1.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet2.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet3.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bullet4.ogg does not exist, cannot add it to event flansmod:bullet
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair1.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair2.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair3.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair4.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair5.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair6.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:03] [Client thread/WARN]: File flansmod:sounds/bulletair7.ogg does not exist, cannot add it to event flansmod:bulletFlyby
+[21:22:05] [Client thread/INFO]: Created: 512x512 textures-atlas
+[21:22:36] [Server thread/INFO]: Starting integrated minecraft server version 1.8
+[21:22:36] [Server thread/INFO]: Generating keypair
+[21:22:36] [Server thread/INFO]: Converting map!
+[21:22:36] [Server thread/INFO]: Scanning folders...
+[21:22:36] [Server thread/INFO]: Total conversion count is 0
+[21:22:37] [Server thread/INFO]: Preparing start region for level 0
+[21:22:37] [Server thread/INFO]: Changing view distance to 12, from 10
+[21:22:39] [Server thread/INFO]: Player392[local:E:8d3a103f] logged in with entity id 0 at (-647.5, 4.0, -554.5)
+[21:22:39] [Server thread/INFO]: Player392 joined the game
+[21:22:46] [Server thread/INFO]: Player392 has just earned the achievement [Taking Inventory]
+[21:22:46] [Client thread/INFO]: [CHAT] Player392 has just earned the achievement [Taking Inventory]
+[21:23:26] [Server thread/INFO]: Saving and pausing game...
+[21:23:26] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:23:26] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:23:26] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:23:26] [Server thread/INFO]: Saving chunks for level 'New World'/Apocalypse
+[21:24:04] [Client thread/INFO]: Stopping!
+[21:24:04] [Client thread/INFO]: SoundSystem shutting down...
+[21:24:04] [Server thread/INFO]: Stopping server
+[21:24:04] [Server thread/INFO]: Saving players
+[21:24:04] [Server thread/INFO]: Saving worlds
+[21:24:04] [Server thread/INFO]: Saving chunks for level 'New World'/Overworld
+[21:24:04] [Server thread/INFO]: Saving chunks for level 'New World'/Nether
+[21:24:04] [Server thread/INFO]: Saving chunks for level 'New World'/The End
+[21:24:04] [Server thread/INFO]: Saving chunks for level 'New World'/Apocalypse
+[21:24:05] [Client thread/WARN]: Author: Paul Lamb, www.paulscode.com

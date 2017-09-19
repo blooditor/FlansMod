@@ -1,10 +1,6 @@
 package com.flansmod.apocalypse.common.world;
 
 import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ANIMALS;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.DUNGEON;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.ICE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAKE;
-import static net.minecraftforge.event.terraingen.PopulateChunkEvent.Populate.EventType.LAVA;
 
 import java.util.Arrays;
 import java.util.List;
@@ -23,13 +19,9 @@ import com.flansmod.common.driveables.DriveableData;
 import com.flansmod.common.driveables.DriveableType;
 import com.flansmod.common.driveables.EntityDriveable;
 import com.flansmod.common.driveables.EnumDriveablePart;
-import com.flansmod.common.types.EnumType;
 
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.entity.EnumCreatureType;
-import net.minecraft.entity.IEntityLivingData;
-import net.minecraft.entity.passive.EntityVillager;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -39,17 +31,12 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.ChunkCoordIntPair;
 import net.minecraft.world.SpawnerAnimals;
 import net.minecraft.world.World;
-import net.minecraft.world.WorldType;
 import net.minecraft.world.biome.BiomeGenBase;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraft.world.chunk.ChunkPrimer;
 import net.minecraft.world.chunk.IChunkProvider;
-import net.minecraft.world.gen.ChunkProviderSettings;
 import net.minecraft.world.gen.NoiseGeneratorOctaves;
 import net.minecraft.world.gen.NoiseGeneratorPerlin;
-import net.minecraft.world.gen.feature.WorldGenDungeons;
-import net.minecraft.world.gen.feature.WorldGenLakes;
-import net.minecraft.world.gen.structure.StructureBoundingBox;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.terraingen.ChunkProviderEvent;
 import net.minecraftforge.event.terraingen.PopulateChunkEvent;

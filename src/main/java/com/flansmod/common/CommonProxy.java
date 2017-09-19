@@ -7,16 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
 
-import net.minecraft.block.Block;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.inventory.Container;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.BlockPos;
-import net.minecraft.world.World;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
 import com.flansmod.common.driveables.ContainerDriveableInventory;
 import com.flansmod.common.driveables.ContainerDriveableMenu;
 import com.flansmod.common.driveables.DriveablePart;
@@ -38,6 +28,15 @@ import com.flansmod.common.parts.PartType;
 import com.flansmod.common.teams.ArmourBoxType;
 import com.flansmod.common.types.EnumType;
 import com.flansmod.common.types.InfoType;
+
+import net.minecraft.block.Block;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.inventory.Container;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.BlockPos;
+import net.minecraft.world.World;
 
 public class CommonProxy
 {

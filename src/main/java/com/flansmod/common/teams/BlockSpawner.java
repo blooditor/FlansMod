@@ -2,14 +2,15 @@ package com.flansmod.common.teams;
 
 import java.util.List;
 
+import com.flansmod.client.FlansModClient;
+import com.flansmod.common.FlansMod;
+
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.BlockFence;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyInteger;
 import net.minecraft.block.state.BlockState;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -21,14 +22,8 @@ import net.minecraft.util.AxisAlignedBB;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.EnumFacing;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.client.FlansModClient;
-import com.flansmod.common.FlansMod;
 
 public class BlockSpawner extends BlockContainer
 {

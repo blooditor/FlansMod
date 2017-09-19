@@ -1,9 +1,6 @@
 package com.flansmod.common.paintjob;
 
-import com.flansmod.common.guns.GunType;
-import com.flansmod.common.guns.ItemGun;
 import com.flansmod.common.guns.Paintjob;
-import com.flansmod.common.guns.SlotGun;
 import com.flansmod.common.types.IPaintableItem;
 import com.flansmod.common.types.PaintableType;
 

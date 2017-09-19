@@ -1,7 +1,5 @@
 package com.flansmod.apocalypse.common;
 
-import java.util.Random;
-
 import com.flansmod.apocalypse.common.blocks.BlockPowerCube;
 import com.flansmod.apocalypse.common.blocks.BlockStatic;
 import com.flansmod.apocalypse.common.blocks.BlockSulphur;
@@ -12,12 +10,10 @@ import com.flansmod.common.BlockItemHolder;
 import com.flansmod.common.CreativeTabFlan;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.ItemHolderType;
-import com.flansmod.common.TileEntityItemHolder;
 import com.flansmod.common.parts.PartType;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
@@ -28,9 +24,9 @@ import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fluids.Fluid;
 import net.minecraftforge.fluids.FluidRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
+import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;

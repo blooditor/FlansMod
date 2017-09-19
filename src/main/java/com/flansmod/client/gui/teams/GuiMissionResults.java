@@ -10,11 +10,9 @@ import com.flansmod.common.FlansMod;
 import com.flansmod.common.guns.GunType;
 import com.flansmod.common.network.PacketTeamInfo;
 import com.flansmod.common.teams.LoadoutPool;
-import com.flansmod.common.teams.LoadoutPool.LoadoutEntry;
 import com.flansmod.common.teams.LoadoutPool.LoadoutEntryInfoType;
 import com.flansmod.common.teams.PlayerRankData;
 import com.flansmod.common.teams.RewardBox;
-import com.flansmod.common.teams.TeamsManagerRanked;
 
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.gui.ScaledResolution;

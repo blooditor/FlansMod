@@ -6,26 +6,23 @@ import java.util.Random;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.OpenGlHelper;
-import net.minecraft.client.renderer.RenderHelper;
-import net.minecraft.entity.player.InventoryPlayer;
-import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.BlockPos;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.client.IItemRenderer.ItemRenderType;
-
 import com.flansmod.client.ClientProxy;
-import com.flansmod.client.model.GunAnimations;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.guns.ContainerGunModTable;
 import com.flansmod.common.guns.GunType;
 import com.flansmod.common.guns.ItemGun;
 import com.flansmod.common.guns.Paintjob;
 import com.flansmod.common.network.PacketGunPaint;
+
+import net.minecraft.client.gui.inventory.GuiContainer;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.RenderHelper;
+import net.minecraft.entity.player.InventoryPlayer;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
+import net.minecraftforge.client.IItemRenderer.ItemRenderType;
 
 public class GuiGunModTable extends GuiContainer 
 {

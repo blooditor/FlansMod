@@ -2,7 +2,6 @@ package com.flansmod.common.guns;
 
 import java.util.HashMap;
 
-import com.flansmod.common.FlansMod;
 import com.flansmod.common.types.EnumPaintjobRarity;
 import com.flansmod.common.types.PaintableType;
 

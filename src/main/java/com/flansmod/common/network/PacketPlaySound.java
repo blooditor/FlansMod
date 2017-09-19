@@ -2,19 +2,17 @@ package com.flansmod.common.network;
 
 import java.util.Random;
 
+import com.flansmod.client.FlansModResourceHandler;
+import com.flansmod.common.FlansMod;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
-
 import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.client.FlansModResourceHandler;
-import com.flansmod.common.FlansMod;
 
 public class PacketPlaySound extends PacketBase 
 {

@@ -4,9 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.flansmod.client.gui.teams.EnumLoadoutSlot;
-import com.flansmod.common.guns.GunType;
-import com.flansmod.common.guns.ItemGun;
-import com.flansmod.common.guns.ShootableType;
 import com.flansmod.common.teams.LoadoutPool.LoadoutEntryInfoType;
 import com.flansmod.common.types.IFlanItem;
 

@@ -12,6 +12,22 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.PlayerData;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.driveables.ItemPlane;
+import com.flansmod.common.driveables.ItemVehicle;
+import com.flansmod.common.guns.GunType;
+import com.flansmod.common.guns.ItemAAGun;
+import com.flansmod.common.guns.ItemBullet;
+import com.flansmod.common.guns.ItemGun;
+import com.flansmod.common.guns.ItemShootable;
+import com.flansmod.common.guns.ShootableType;
+import com.flansmod.common.network.PacketBase;
+import com.flansmod.common.network.PacketTeamInfo;
+import com.flansmod.common.network.PacketTeamSelect;
+import com.flansmod.common.types.InfoType;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
@@ -35,7 +51,6 @@ import net.minecraft.world.WorldSettings.GameType;
 import net.minecraft.world.chunk.Chunk;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
-import net.minecraftforge.event.entity.item.ItemTossEvent;
 import net.minecraftforge.event.entity.living.LivingAttackEvent;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.player.EntityInteractEvent;
@@ -49,24 +64,6 @@ import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.eventhandler.Event;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.PlayerEvent;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.PlayerData;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.driveables.ItemPlane;
-import com.flansmod.common.driveables.ItemVehicle;
-import com.flansmod.common.guns.GunType;
-import com.flansmod.common.guns.ItemAAGun;
-import com.flansmod.common.guns.ItemBullet;
-import com.flansmod.common.guns.ItemGun;
-import com.flansmod.common.guns.ItemShootable;
-import com.flansmod.common.guns.ShootableType;
-import com.flansmod.common.network.PacketBase;
-import com.flansmod.common.network.PacketRoundFinished;
-import com.flansmod.common.network.PacketTeamInfo;
-import com.flansmod.common.network.PacketTeamSelect;
-import com.flansmod.common.network.PacketVoting;
-import com.flansmod.common.types.InfoType;
 
 public class TeamsManager
 {

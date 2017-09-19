@@ -1,5 +1,8 @@
 package com.flansmod.client.gui.teams;
 
+import java.io.IOException;
+import java.util.Arrays;
+
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
 
@@ -12,9 +15,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.GuiTextField;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.util.ResourceLocation;
-
-import java.io.IOException;
-import java.util.Arrays;
 
 public class GuiBaseEditor extends GuiScreen 
 {

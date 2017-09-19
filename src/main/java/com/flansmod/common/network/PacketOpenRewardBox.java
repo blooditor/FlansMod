@@ -1,15 +1,12 @@
 package com.flansmod.common.network;
 
-import com.flansmod.client.gui.teams.GuiOpenRewardBox;
 import com.flansmod.client.teams.ClientTeamsData;
 import com.flansmod.common.FlansMod;
-import com.flansmod.common.guns.Paintjob;
 import com.flansmod.common.teams.RewardBox;
 import com.flansmod.common.teams.TeamsManagerRanked;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
-import net.minecraft.client.Minecraft;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.relauncher.Side;

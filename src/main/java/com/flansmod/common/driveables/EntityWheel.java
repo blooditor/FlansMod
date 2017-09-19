@@ -1,6 +1,5 @@
 package com.flansmod.common.driveables;
 
-import com.flansmod.common.FlansMod;
 import com.flansmod.common.vector.Vector3f;
 
 import io.netty.buffer.ByteBuf;

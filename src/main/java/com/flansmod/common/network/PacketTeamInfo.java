@@ -3,13 +3,6 @@ package com.flansmod.common.network;
 import java.util.ArrayList;
 import java.util.Collections;
 
-import io.netty.buffer.ByteBuf;
-import io.netty.channel.ChannelHandlerContext;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.entity.player.EntityPlayerMP;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import com.flansmod.client.FlansModClient;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.PlayerData;
@@ -19,6 +12,13 @@ import com.flansmod.common.teams.PlayerRankData;
 import com.flansmod.common.teams.Team;
 import com.flansmod.common.teams.TeamsManager;
 import com.flansmod.common.teams.TeamsManagerRanked;
+
+import io.netty.buffer.ByteBuf;
+import io.netty.channel.ChannelHandlerContext;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.player.EntityPlayerMP;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class PacketTeamInfo extends PacketBase 
 {			

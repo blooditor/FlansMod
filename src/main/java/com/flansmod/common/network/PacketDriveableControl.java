@@ -1,5 +1,9 @@
 package com.flansmod.common.network;
 
+import com.flansmod.common.driveables.EntityDriveable;
+import com.flansmod.common.driveables.EntityPlane;
+import com.flansmod.common.driveables.EntityVehicle;
+
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import net.minecraft.entity.Entity;
@@ -7,10 +11,6 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.driveables.EntityDriveable;
-import com.flansmod.common.driveables.EntityPlane;
-import com.flansmod.common.driveables.EntityVehicle;
 
 public class PacketDriveableControl extends PacketBase
 {

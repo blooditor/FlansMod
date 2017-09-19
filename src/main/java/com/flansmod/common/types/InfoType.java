@@ -1,9 +1,9 @@
 package com.flansmod.common.types;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Random;
+
+import com.flansmod.common.FlansMod;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.client.model.ModelBase;
@@ -11,20 +11,14 @@ import net.minecraft.init.Items;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.WeightedRandomChestContent;
 import net.minecraft.world.World;
 import net.minecraftforge.common.ChestGenHooks;
-import net.minecraftforge.common.DungeonHooks;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.guns.Paintjob;
 
 public class InfoType
 {

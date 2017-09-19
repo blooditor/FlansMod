@@ -2,14 +2,13 @@ package com.flansmod.common.teams;
 
 import java.util.ArrayList;
 
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-
 import com.flansmod.client.gui.teams.EnumLoadoutSlot;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.guns.Paintjob;
 import com.flansmod.common.types.InfoType;
 import com.flansmod.common.types.TypeFile;
+
+import net.minecraft.item.ItemStack;
 
 public class LoadoutPool extends InfoType 
 {	

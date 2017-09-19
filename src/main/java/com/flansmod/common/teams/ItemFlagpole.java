@@ -1,5 +1,9 @@
 package com.flansmod.common.teams;
 
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.types.IFlanItem;
+import com.flansmod.common.types.InfoType;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -11,12 +15,6 @@ import net.minecraft.util.MovingObjectPosition;
 import net.minecraft.util.MovingObjectPosition.MovingObjectType;
 import net.minecraft.util.Vec3;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.types.IFlanItem;
-import com.flansmod.common.types.InfoType;
 
 public class ItemFlagpole extends Item implements IFlanItem
 {

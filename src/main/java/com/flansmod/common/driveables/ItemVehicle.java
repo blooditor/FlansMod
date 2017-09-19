@@ -6,6 +6,13 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.parts.PartType;
+import com.flansmod.common.types.EnumType;
+import com.flansmod.common.types.IPaintableItem;
+import com.flansmod.common.types.InfoType;
+import com.flansmod.common.types.PaintableType;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,14 +32,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.parts.PartType;
-import com.flansmod.common.types.EnumType;
-import com.flansmod.common.types.IFlanItem;
-import com.flansmod.common.types.IPaintableItem;
-import com.flansmod.common.types.InfoType;
-import com.flansmod.common.types.PaintableType;
 
 public class ItemVehicle extends ItemMapBase implements IPaintableItem
 {

@@ -3,6 +3,17 @@ package com.flansmod.common.tools;
 import java.util.Collections;
 import java.util.List;
 
+import com.flansmod.client.debug.EntityDebugVector;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.PlayerData;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.driveables.DriveablePart;
+import com.flansmod.common.driveables.EntityDriveable;
+import com.flansmod.common.network.PacketFlak;
+import com.flansmod.common.types.IFlanItem;
+import com.flansmod.common.types.InfoType;
+import com.flansmod.common.vector.Vector3f;
+
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemFood;
@@ -16,17 +27,6 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.client.debug.EntityDebugVector;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.PlayerData;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.driveables.DriveablePart;
-import com.flansmod.common.driveables.EntityDriveable;
-import com.flansmod.common.network.PacketFlak;
-import com.flansmod.common.types.IFlanItem;
-import com.flansmod.common.types.InfoType;
-import com.flansmod.common.vector.Vector3f;
 
 public class ItemTool extends ItemFood implements IFlanItem
 {

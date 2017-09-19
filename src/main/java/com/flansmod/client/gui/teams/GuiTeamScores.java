@@ -2,16 +2,15 @@ package com.flansmod.client.gui.teams;
 
 import org.lwjgl.opengl.GL11;
 
-import net.minecraft.client.gui.FontRenderer;
-import net.minecraft.client.gui.GuiScreen;
-import net.minecraft.client.gui.ScaledResolution;
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.util.ResourceLocation;
-
 import com.flansmod.client.FlansModClient;
 import com.flansmod.client.teams.ClientTeamsData;
 import com.flansmod.common.network.PacketTeamInfo;
 import com.flansmod.common.teams.Team;
+
+import net.minecraft.client.gui.FontRenderer;
+import net.minecraft.client.gui.ScaledResolution;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.util.ResourceLocation;
 
 public class GuiTeamScores extends GuiTeamsBase
 {

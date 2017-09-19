@@ -3,6 +3,27 @@ package com.flansmod.client;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
+import org.lwjgl.util.glu.Project;
+
+import com.flansmod.api.IControllable;
+import com.flansmod.client.gui.teams.GuiTeamScores;
+import com.flansmod.client.model.ModelGun;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.PlayerData;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.driveables.EntityDriveable;
+import com.flansmod.common.driveables.EntitySeat;
+import com.flansmod.common.guns.GunType;
+import com.flansmod.common.guns.ItemGun;
+import com.flansmod.common.network.PacketTeamInfo;
+import com.flansmod.common.network.PacketTeamInfo.PlayerScoreData;
+import com.flansmod.common.teams.ItemTeamArmour;
+import com.flansmod.common.teams.Team;
+import com.flansmod.common.types.IPaintableItem;
+import com.flansmod.common.types.InfoType;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
@@ -20,55 +41,25 @@ import net.minecraft.client.renderer.ItemRenderer;
 import net.minecraft.client.renderer.OpenGlHelper;
 import net.minecraft.client.renderer.RenderHelper;
 import net.minecraft.client.renderer.Tessellator;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.entity.RenderItem;
-import net.minecraft.client.renderer.entity.RenderPlayer;
 import net.minecraft.client.renderer.entity.RendererLivingEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.EnumAction;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.BlockPos;
 import net.minecraft.util.MathHelper;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.IItemRenderer.ItemRenderType;
+import net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup;
 import net.minecraftforge.client.event.RenderGameOverlayEvent;
+import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.client.event.RenderHandEvent;
 import net.minecraftforge.client.event.RenderItemInFrameEvent;
 import net.minecraftforge.client.event.RenderLivingEvent;
 import net.minecraftforge.client.event.RenderPlayerEvent;
-import net.minecraftforge.client.event.RenderWorldEvent;
-import net.minecraftforge.client.event.RenderWorldLastEvent;
-import net.minecraftforge.client.event.EntityViewRenderEvent.CameraSetup;
-import net.minecraftforge.client.event.RenderGameOverlayEvent.ElementType;
 import net.minecraftforge.fml.client.FMLClientHandler;
-import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
-
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.opengl.GL12;
-import org.lwjgl.util.glu.Project;
-
-import com.flansmod.api.IControllable;
-import com.flansmod.client.gui.teams.GuiTeamScores;
-import com.flansmod.client.model.InstantBulletRenderer;
-import com.flansmod.client.model.ModelGun;
-import com.flansmod.client.model.RenderGun;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.PlayerData;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.driveables.EntityDriveable;
-import com.flansmod.common.driveables.EntitySeat;
-import com.flansmod.common.guns.GunType;
-import com.flansmod.common.guns.ItemGun;
-import com.flansmod.common.guns.Paintjob;
-import com.flansmod.common.network.PacketTeamInfo;
-import com.flansmod.common.network.PacketTeamInfo.PlayerScoreData;
-import com.flansmod.common.teams.ItemTeamArmour;
-import com.flansmod.common.teams.Team;
-import com.flansmod.common.types.IPaintableItem;
-import com.flansmod.common.types.InfoType;
 
 public class ClientRenderHooks 
 {

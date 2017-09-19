@@ -16,6 +16,9 @@ public class RenderSurvivor extends RenderBiped
 		super(man, model, f);
 		
         this.addLayer(new LayerBipedArmor(this));
+
+        //make them look more realistic by aiming with the gun
+ 	   model.aimedBow = true;
 	}
 
     protected ResourceLocation getEntityTexture(EntityLiving entity)

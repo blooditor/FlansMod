@@ -17,14 +17,18 @@ import com.flansmod.client.model.InstantBulletRenderer.InstantShotTrail;
 import com.flansmod.common.FlansMod;
 import com.flansmod.common.PlayerData;
 import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.RotatedAxes;
 import com.flansmod.common.guns.ShotData.InstantShotData;
 import com.flansmod.common.guns.ShotData.SpawnEntityShotData;
+import com.flansmod.common.guns.raytracing.EnumHitboxType;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer.BlockHit;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer.BulletHit;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer.DriveableHit;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer.EntityHit;
 import com.flansmod.common.guns.raytracing.FlansModRaytracer.PlayerBulletHit;
+import com.flansmod.common.guns.raytracing.PlayerHitbox;
+import com.flansmod.common.guns.raytracing.PlayerSnapshot;
 import com.flansmod.common.network.PacketPlaySound;
 import com.flansmod.common.network.PacketReload;
 import com.flansmod.common.network.PacketSelectOffHandGun;
@@ -823,109 +827,14 @@ public class ItemGun extends Item implements IPaintableItem
 			
 			onUpdateEach(itemstack, player.inventory.currentItem, world, entity, false, hasOffHand);
 		}
-	}
-	
-	/** Called once for each weapon we are weilding */
-	private void onUpdateEach(ItemStack itemstack, int gunSlot, World world, Entity entity, boolean isOffHand, boolean hasOffHand)
-	{
-		if(world.isRemote)
-			onUpdateClient(itemstack, gunSlot, world, entity, isOffHand, hasOffHand);
-		else onUpdateServer(itemstack, gunSlot, world, entity, isOffHand, hasOffHand);		
-	}
-	
-	public boolean Reload(ItemStack gunstack, World world, Entity entity, IInventory inventory, boolean isOffHand, boolean hasOffHand, boolean forceReload, boolean isCreative)
-	{
-		//Deployable guns cannot be reloaded in the inventory
-		if(type.deployable)
-			return false;
-		//If you cannot reload half way through a clip, reject the player for trying to do so
-		if(forceReload && !type.canForceReload)
-			return false;
+		//meele mess
+	//	if(world.isRemote)
+	//		onUpdateClient(itemstack, world, entity, i, flag);
+	//	else onUpdateServer(itemstack, world, entity, i, flag);
 		
-		//For playing sounds afterwards
-		boolean reloadedSomething = false;
-		//Check each ammo slot, one at a time
-		for(int i = 0; i < type.numAmmoItemsInGun; i++)
+		if(entity instanceof EntityPlayer)
 		{
-			//Get the stack in the slot
-			ItemStack bulletStack = getBulletItemStack(gunstack, i);
-			
-			//If there is no magazine, if the magazine is empty or if this is a forced reload
-			if(bulletStack == null || bulletStack.getItemDamage() == bulletStack.getMaxDamage() || forceReload)
-			{		
-				//Iterate over all inventory slots and find the magazine / bullet item with the most bullets
-				int bestSlot = -1;
-				int bulletsInBestSlot = 0;
-				for (int j = 0; j < inventory.getSizeInventory(); j++)
-				{
-					ItemStack item = inventory.getStackInSlot(j);
-					if (item != null && item.getItem() instanceof ItemShootable && type.isAmmo(((ItemShootable)(item.getItem())).type))
-					{
-						int bulletsInThisSlot = item.getMaxDamage() - item.getItemDamage();
-						if(bulletsInThisSlot > bulletsInBestSlot)
-						{
-							bestSlot = j;
-							bulletsInBestSlot = bulletsInThisSlot;
-						}
-					}
-				}
-				//If there was a valid non-empty magazine / bullet item somewhere in the inventory, load it
-				if(bestSlot != -1)
-				{
-					ItemStack newBulletStack = inventory.getStackInSlot(bestSlot);
-					ShootableType newBulletType = ((ItemShootable)newBulletStack.getItem()).type;
-					
-					//Unload the old magazine (Drop an item if it is required and the player is not in creative mode)
-					if(bulletStack != null && bulletStack.getItem() instanceof ItemShootable && ((ItemShootable)bulletStack.getItem()).type.dropItemOnReload != null && !isCreative && bulletStack.getItemDamage() == bulletStack.getMaxDamage())
-					{
-						if(!world.isRemote)
-							dropItem(world, entity, ((ItemShootable)bulletStack.getItem()).type.dropItemOnReload);
-					}
-						
-					//The magazine was not finished, pull it out and give it back to the player or, failing that, drop it
-					if(bulletStack != null && bulletStack.getItemDamage() < bulletStack.getMaxDamage())
-					{
-						if(!InventoryHelper.addItemStackToInventory(inventory, bulletStack, isCreative))
-						{
-							if(!world.isRemote)
-								entity.entityDropItem(bulletStack, 0.5F);
-						}
-					}
-							
-					//Load the new magazine
-					ItemStack stackToLoad = newBulletStack.copy();
-					stackToLoad.stackSize = 1;
-					setBulletItemStack(gunstack, stackToLoad, i);					
-					
-					//Remove the magazine from the inventory
-					if(!isCreative)
-						newBulletStack.stackSize--;
-					if(newBulletStack.stackSize <= 0)
-						newBulletStack = null;
-					inventory.setInventorySlotContents(bestSlot, newBulletStack);
-								
-					
-					//Tell the sound player that we reloaded something
-					reloadedSomething = true;
-				}
-			}
-		}
-		return reloadedSomething;
-	}
-	
-	// TODO : All this bunk
-		
-	/* Melee MESS
-	 * 	@Override
-	public void onUpdate(ItemStack itemstack, World world, Entity pEnt, int i, boolean flag)
-	{
-		if(world.isRemote)
-			onUpdateClient(itemstack, world, pEnt, i, flag);
-		else onUpdateServer(itemstack, world, pEnt, i, flag);
-		
-		if(pEnt instanceof EntityPlayer)
-		{
-			EntityPlayer player = (EntityPlayer)pEnt;
+			EntityPlayer player = (EntityPlayer)entity;
 			PlayerData data = PlayerHandler.getPlayerData(player);
 			if(data == null)
 				return;
@@ -1030,10 +939,10 @@ public class ItemGun extends Item implements IPaintableItem
 							}
 							else
 							{
-								Entity entity = (Entity)obj;
-								if(entity != player && !entity.isDead && (entity instanceof EntityLivingBase || entity instanceof EntityAAGun))
+								Entity e = (Entity)obj;
+								if(e != player && !e.isDead && (e instanceof EntityLivingBase || e instanceof EntityAAGun))
 								{
-									MovingObjectPosition mop = entity.getEntityBoundingBox().calculateIntercept(data.lastMeleePositions[k].toVec3(), nextPosInWorldCoords.toVec3());
+									MovingObjectPosition mop = e.getEntityBoundingBox().calculateIntercept(data.lastMeleePositions[k].toVec3(), nextPosInWorldCoords.toVec3());
 									if(mop != null)
 									{
 										Vector3f hitPoint = new Vector3f(mop.hitVec.xCoord - data.lastMeleePositions[k].x, mop.hitVec.yCoord - data.lastMeleePositions[k].y, mop.hitVec.zCoord - data.lastMeleePositions[k].z);
@@ -1047,7 +956,7 @@ public class ItemGun extends Item implements IPaintableItem
 										if(hitLambda < 0)
 											hitLambda = -hitLambda;
 										
-										hits.add(new EntityHit(entity, hitLambda));
+										hits.add(new EntityHit(e, hitLambda));
 									}
 								}
 							}
@@ -1119,9 +1028,94 @@ public class ItemGun extends Item implements IPaintableItem
 			}
 		}
 	}
-	 
-	 * 
-	 */
+	
+	/** Called once for each weapon we are weilding */
+	private void onUpdateEach(ItemStack itemstack, int gunSlot, World world, Entity entity, boolean isOffHand, boolean hasOffHand)
+	{
+		if(world.isRemote)
+			onUpdateClient(itemstack, gunSlot, world, entity, isOffHand, hasOffHand);
+		else onUpdateServer(itemstack, gunSlot, world, entity, isOffHand, hasOffHand);		
+	}
+	
+	public boolean Reload(ItemStack gunstack, World world, Entity entity, IInventory inventory, boolean isOffHand, boolean hasOffHand, boolean forceReload, boolean isCreative)
+	{
+		//Deployable guns cannot be reloaded in the inventory
+		if(type.deployable)
+			return false;
+		//If you cannot reload half way through a clip, reject the player for trying to do so
+		if(forceReload && !type.canForceReload)
+			return false;
+		
+		//For playing sounds afterwards
+		boolean reloadedSomething = false;
+		//Check each ammo slot, one at a time
+		for(int i = 0; i < type.numAmmoItemsInGun; i++)
+		{
+			//Get the stack in the slot
+			ItemStack bulletStack = getBulletItemStack(gunstack, i);
+			
+			//If there is no magazine, if the magazine is empty or if this is a forced reload
+			if(bulletStack == null || bulletStack.getItemDamage() == bulletStack.getMaxDamage() || forceReload)
+			{		
+				//Iterate over all inventory slots and find the magazine / bullet item with the most bullets
+				int bestSlot = -1;
+				int bulletsInBestSlot = 0;
+				for (int j = 0; j < inventory.getSizeInventory(); j++)
+				{
+					ItemStack item = inventory.getStackInSlot(j);
+					if (item != null && item.getItem() instanceof ItemShootable && type.isAmmo(((ItemShootable)(item.getItem())).type))
+					{
+						int bulletsInThisSlot = item.getMaxDamage() - item.getItemDamage();
+						if(bulletsInThisSlot > bulletsInBestSlot)
+						{
+							bestSlot = j;
+							bulletsInBestSlot = bulletsInThisSlot;
+						}
+					}
+				}
+				//If there was a valid non-empty magazine / bullet item somewhere in the inventory, load it
+				if(bestSlot != -1)
+				{
+					ItemStack newBulletStack = inventory.getStackInSlot(bestSlot);
+					ShootableType newBulletType = ((ItemShootable)newBulletStack.getItem()).type;
+					
+					//Unload the old magazine (Drop an item if it is required and the player is not in creative mode)
+					if(bulletStack != null && bulletStack.getItem() instanceof ItemShootable && ((ItemShootable)bulletStack.getItem()).type.dropItemOnReload != null && !isCreative && bulletStack.getItemDamage() == bulletStack.getMaxDamage())
+					{
+						if(!world.isRemote)
+							dropItem(world, entity, ((ItemShootable)bulletStack.getItem()).type.dropItemOnReload);
+					}
+						
+					//The magazine was not finished, pull it out and give it back to the player or, failing that, drop it
+					if(bulletStack != null && bulletStack.getItemDamage() < bulletStack.getMaxDamage())
+					{
+						if(!InventoryHelper.addItemStackToInventory(inventory, bulletStack, isCreative))
+						{
+							if(!world.isRemote)
+								entity.entityDropItem(bulletStack, 0.5F);
+						}
+					}
+							
+					//Load the new magazine
+					ItemStack stackToLoad = newBulletStack.copy();
+					stackToLoad.stackSize = 1;
+					setBulletItemStack(gunstack, stackToLoad, i);					
+					
+					//Remove the magazine from the inventory
+					if(!isCreative)
+						newBulletStack.stackSize--;
+					if(newBulletStack.stackSize <= 0)
+						newBulletStack = null;
+					inventory.setInventorySlotContents(bestSlot, newBulletStack);
+								
+					
+					//Tell the sound player that we reloaded something
+					reloadedSomething = true;
+				}
+			}
+		}
+		return reloadedSomething;
+	}
 	
 	private boolean needsToReload(ItemStack stack)
 	{

@@ -57,7 +57,7 @@ public class EntityFlansModShooter extends EntityMob implements IRangedAttackMob
         	tasks.addTask(4, this.aiArrowAttack);
         }
         
-        renderDistanceWeight = 200D;
+        renderDistanceWeight = 250D;
 	}
 	
 	@Override
@@ -273,12 +273,17 @@ public class EntityFlansModShooter extends EntityMob implements IRangedAttackMob
 				Vector3f direction = new Vector3f(target.posX - posX, (target.posY + target.getEyeHeight()) - (posY + getEyeHeight()), target.posZ - posZ).normalise(null);
 				Vector3f.add(direction, new Vector3f(rand.nextFloat() * direction.x * inaccuracy, rand.nextFloat() * direction.y * inaccuracy, rand.nextFloat() * direction.z * inaccuracy), direction);
 				ItemShootable shootableItem = (ItemShootable)bulletStack.getItem();
+
+				//walkaround for survivors not hitting anything... stupid instant bullet thingy :P
+				float speed = gunType.getBulletSpeed(stack) > 0? gunType.getBulletSpeed(stack) : 10.0f;
+				
+				if(speed > 5)
 				shootableItem.Shoot(worldObj,
 						origin,
 						direction,
 						gunType.getDamage(stack),
 						gunType.getSpread(stack),
-						gunType.getBulletSpeed(stack),
+						speed,
 						gunType,
 						this);
 			}

@@ -464,6 +464,7 @@ public abstract class EntityDriveable extends Entity implements IControllable, I
 			//We can shoot, so grab the available shoot points and the weaponType
 			ArrayList<DriveablePosition> shootPoints = type.shootPoints(secondary);
 			EnumWeaponType weaponType = type.weaponType(secondary);
+
 			//If there are no shoot points, return
 			if(shootPoints.size() == 0)
 				return;
@@ -501,6 +502,44 @@ public abstract class EntityDriveable extends Entity implements IControllable, I
 		//If its a pilot gun, then it is using a gun type, so do the following
 		if(shootPoint instanceof PilotGun)
 		{
+			//ignoring that instant bullet trash and using 4.10 method to fix guns in vehicles:
+			
+			PilotGun pilotGun = (PilotGun)shootPoint;
+			//Get the gun from the plane type and the ammo from the data
+			GunType gunType = pilotGun.type;
+			ItemStack bulletItemStack = driveableData.ammo[getDriveableType().numPassengerGunners + currentGun];
+			//Check that neither is null and that the bullet item is actually a bullet
+			if(gunType != null && bulletItemStack != null && bulletItemStack.getItem() instanceof ItemShootable && TeamsManager.bulletsEnabled)
+			{
+				ShootableType bullet = ((ItemShootable)bulletItemStack.getItem()).type;
+				if(gunType.isAmmo(bullet))
+				{
+					//Spawn a new bullet item
+					worldObj.spawnEntityInWorld(((ItemShootable)bulletItemStack.getItem()).getEntity(worldObj, Vector3f.add(gunVec, new Vector3f((float)posX, (float)posY, (float)posZ), null), lookVector, (EntityLivingBase)seats[0].riddenByEntity, gunType.bulletSpread / 2, gunType.damage, 10.0F, type));
+					//Play the shoot sound
+					PacketPlaySound.sendSoundPacket(posX, posY, posZ, FlansMod.soundRange, dimension, type.shootSound(secondary), false);
+					//Get the bullet item damage and increment it
+					int damage = bulletItemStack.getItemDamage();
+					bulletItemStack.setItemDamage(damage + 1);	
+					//If the bullet item is completely damaged (empty)
+					if(damage + 1 == bulletItemStack.getMaxDamage())
+					{
+						//Set the damage to 0 and consume one ammo item (unless in creative)
+						bulletItemStack.setItemDamage(0);
+						if(seats[0].riddenByEntity instanceof EntityPlayer && !((EntityPlayer)seats[0].riddenByEntity).capabilities.isCreativeMode)
+						{
+							bulletItemStack.stackSize--;
+							if(bulletItemStack.stackSize <= 0)
+								bulletItemStack = null;
+							driveableData.setInventorySlotContents(getDriveableType().numPassengerGunners + currentGun, bulletItemStack);
+						}
+					}
+					//Reset the shoot delay
+					setShootDelay(type.shootDelay(secondary), secondary);
+				}
+			}
+			
+			/*
 			PilotGun pilotGun = (PilotGun)shootPoint;
 			//Get the gun from the plane type and the ammo from the data
 			GunType gunType = pilotGun.type;

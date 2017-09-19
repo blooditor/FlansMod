@@ -914,7 +914,7 @@ public void cameraSetup(CameraSetup event)
 		for(int n = 0; n < killMessages.size(); n++)
 		{
 			KillMessage killMessage = killMessages.get(n);
-			mc.fontRendererObj.drawString("\u00a7" + killMessage.killerName + "     " + "\u00a7" + killMessage.killedName, i - mc.fontRendererObj.getStringWidth(killMessage.killerName + "     " + killMessage.killedName) - 6, j - 22 - killMessage.line * 16, 0xffffff);
+			mc.fontRendererObj.drawString("\u00a7" + killMessage.killerName + "     " + "\u00a7" + killMessage.killedName, i - mc.fontRendererObj.getStringWidth(killMessage.killerName + "     " + killMessage.killedName) - 6, j - 42 - killMessage.line * 16, 0xffffff);
 		}
 					
 		//Draw icons indicated weapons used
@@ -926,7 +926,7 @@ public void cameraSetup(CameraSetup event)
 		for(int n = 0; n < killMessages.size(); n++)
 		{
 			KillMessage killMessage = killMessages.get(n);
-			drawSlotInventory(mc.fontRendererObj, new ItemStack(killMessage.weapon.item, 1, killMessage.paint), i - mc.fontRendererObj.getStringWidth("     " + killMessage.killedName) - 12, j - 26 - killMessage.line * 16);
+			drawSlotInventory(mc.fontRendererObj, new ItemStack(killMessage.weapon.item, 1, killMessage.paint), i - mc.fontRendererObj.getStringWidth("     " + killMessage.killedName) - 12, j - 46 - killMessage.line * 16);
 		}
 		GL11.glDisable(3042 /*GL_BLEND*/);
 		RenderHelper.disableStandardItemLighting();

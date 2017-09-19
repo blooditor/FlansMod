@@ -459,7 +459,7 @@ public abstract class EntityDriveable extends Entity implements IControllable, I
 		if(seats[0] == null && !(seats[0].riddenByEntity instanceof EntityLivingBase))
 			return;
 		//Check shoot delay
-		while(getShootDelay(secondary) <= 0.0f)
+		if(getShootDelay(secondary) <= 0.0f) //hotfix for gamebreaking crash everyone complains about
 		{
 			//We can shoot, so grab the available shoot points and the weaponType
 			ArrayList<DriveablePosition> shootPoints = type.shootPoints(secondary);
@@ -507,7 +507,7 @@ public abstract class EntityDriveable extends Entity implements IControllable, I
 			ItemStack shootableStack = driveableData.ammo[getDriveableType().numPassengerGunners + currentGun];
 			EntityPlayer driver = GetDriver();
 			
-			if(shootableStack == null)
+			if(shootableStack == null || !(shootableStack.getItem() instanceof ItemShootable)) //Rare crash fix
 				return;
 			
 			// For each 

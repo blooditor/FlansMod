@@ -914,7 +914,7 @@ public void cameraSetup(CameraSetup event)
 		for(int n = 0; n < killMessages.size(); n++)
 		{
 			KillMessage killMessage = killMessages.get(n);
-			mc.fontRendererObj.drawString("\u00a7" + killMessage.killerName + "     " + "\u00a7" + killMessage.killedName, i - mc.fontRendererObj.getStringWidth(killMessage.killerName + "     " + killMessage.killedName) - 6, j - 32 - killMessage.line * 16, 0xffffff);
+			mc.fontRendererObj.drawString("\u00a7" + killMessage.killerName + "     " + "\u00a7" + killMessage.killedName, i - mc.fontRendererObj.getStringWidth(killMessage.killerName + "     " + killMessage.killedName) - 6, j - 22 - killMessage.line * 16, 0xffffff);
 		}
 					
 		//Draw icons indicated weapons used
@@ -926,7 +926,7 @@ public void cameraSetup(CameraSetup event)
 		for(int n = 0; n < killMessages.size(); n++)
 		{
 			KillMessage killMessage = killMessages.get(n);
-			drawSlotInventory(mc.fontRendererObj, new ItemStack(killMessage.weapon.item, 1, killMessage.paint), i - mc.fontRendererObj.getStringWidth("     " + killMessage.killedName) - 12, j - 36 - killMessage.line * 16);
+			drawSlotInventory(mc.fontRendererObj, new ItemStack(killMessage.weapon.item, 1, killMessage.paint), i - mc.fontRendererObj.getStringWidth("     " + killMessage.killedName) - 12, j - 26 - killMessage.line * 16);
 		}
 		GL11.glDisable(3042 /*GL_BLEND*/);
 		RenderHelper.disableStandardItemLighting();
@@ -935,7 +935,7 @@ public void cameraSetup(CameraSetup event)
 	private void RenderVehicleDebug()
 	{
 		//DEBUG vehicles
-		if(mc.thePlayer.ridingEntity instanceof EntitySeat)
+		if(FlansMod.DEBUG && mc.thePlayer.ridingEntity instanceof EntitySeat)
 		{
 			EntityDriveable ent = ((EntitySeat)mc.thePlayer.ridingEntity).driveable;
 			
@@ -950,10 +950,10 @@ public void cameraSetup(CameraSetup event)
 			
 			mc.fontRendererObj.drawString("Speed: " + speed + " chunks per hour", 2, 2, 0xffffff);
 			
-			if(FlansMod.DEBUG)
-			{
+			//if(FlansMod.DEBUG)
+			//{
 				mc.fontRendererObj.drawString("Throttle : " + ent.throttle, 2, 12, 0xffffff);
-			}
+			//}
 		}
 	}
 	

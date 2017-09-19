@@ -594,7 +594,7 @@ public abstract class EntityDriveable extends Entity implements IControllable, I
 			}
 			
 			//Reset the shoot delay
-			setShootDelay(type.shootDelay(secondary), secondary);
+			setShootDelay(type.shootDelay(secondary), secondary);*/
 		}
 		else //One of the other modes
 		{

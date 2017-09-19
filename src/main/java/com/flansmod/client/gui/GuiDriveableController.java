@@ -14,6 +14,7 @@ import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.inventory.GuiInventory;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraftforge.fml.common.gameevent.InputEvent;
 
 public class GuiDriveableController extends GuiScreen 
 {
@@ -134,6 +135,8 @@ public class GuiDriveableController extends GuiScreen
 		{
 			FlansModClient.reloadModels(false);
 		}
+		//fires click event for other mods
+		net.minecraftforge.fml.common.FMLCommonHandler.instance().bus().post(new InputEvent.KeyInputEvent());
 	}
 	
 	@Override

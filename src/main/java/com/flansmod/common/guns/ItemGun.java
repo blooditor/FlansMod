@@ -289,6 +289,11 @@ public class ItemGun extends Item implements IPaintableItem
 		if(mc.objectMouseOver != null && (mc.objectMouseOver.entityHit instanceof EntityFlagpole || mc.objectMouseOver.entityHit instanceof EntityFlag || mc.objectMouseOver.entityHit instanceof EntityGunItem || (mc.objectMouseOver.entityHit instanceof EntityGrenade && ((EntityGrenade)mc.objectMouseOver.entityHit).type.isDeployableBag)))
 			return;
 		
+		
+		//dont shoot when GUI is open
+		if(mc.isGamePaused() || mc.currentScreen != null)
+			return;
+		
 		// If we have an off hand item, then disable our secondary functions
 		boolean secondaryFunctionsEnabled = true;
 		

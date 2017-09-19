@@ -1,14 +1,34 @@
 package com.flansmod.common.guns;
 
-import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+
+import com.flansmod.client.FlansModClient;
+import com.flansmod.client.FlansModResourceHandler;
+import com.flansmod.client.debug.EntityDebugDot;
+import com.flansmod.client.debug.EntityDebugVector;
+import com.flansmod.common.FlansMod;
+import com.flansmod.common.FlansModExplosion;
+import com.flansmod.common.PlayerHandler;
+import com.flansmod.common.driveables.EntityPlane;
+import com.flansmod.common.driveables.EntitySeat;
+import com.flansmod.common.driveables.EntityVehicle;
+import com.flansmod.common.driveables.mechas.EntityMecha;
+import com.flansmod.common.guns.raytracing.FlansModRaytracer;
+import com.flansmod.common.guns.raytracing.FlansModRaytracer.BlockHit;
+import com.flansmod.common.guns.raytracing.FlansModRaytracer.BulletHit;
+import com.flansmod.common.guns.raytracing.FlansModRaytracer.DriveableHit;
+import com.flansmod.common.guns.raytracing.FlansModRaytracer.EntityHit;
+import com.flansmod.common.guns.raytracing.FlansModRaytracer.PlayerBulletHit;
+import com.flansmod.common.network.PacketFlak;
+import com.flansmod.common.network.PacketPlaySound;
+import com.flansmod.common.teams.TeamsManager;
+import com.flansmod.common.types.InfoType;
+import com.flansmod.common.vector.Vector3f;
 
 import io.netty.buffer.ByteBuf;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.state.BlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.particle.EntityFX;
@@ -37,36 +57,6 @@ import net.minecraftforge.fml.common.network.ByteBufUtils;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-import com.flansmod.client.FlansModClient;
-import com.flansmod.client.FlansModResourceHandler;
-import com.flansmod.client.debug.EntityDebugDot;
-import com.flansmod.client.debug.EntityDebugVector;
-import com.flansmod.common.FlansMod;
-import com.flansmod.common.FlansModExplosion;
-import com.flansmod.common.PlayerData;
-import com.flansmod.common.PlayerHandler;
-import com.flansmod.common.RotatedAxes;
-import com.flansmod.common.driveables.EntityDriveable;
-import com.flansmod.common.driveables.EntityPlane;
-import com.flansmod.common.driveables.EntitySeat;
-import com.flansmod.common.driveables.EntityVehicle;
-import com.flansmod.common.driveables.mechas.EntityMecha;
-import com.flansmod.common.guns.raytracing.EnumHitboxType;
-import com.flansmod.common.guns.raytracing.FlansModRaytracer;
-import com.flansmod.common.guns.raytracing.PlayerHitbox;
-import com.flansmod.common.guns.raytracing.PlayerSnapshot;
-import com.flansmod.common.guns.raytracing.FlansModRaytracer.BlockHit;
-import com.flansmod.common.guns.raytracing.FlansModRaytracer.BulletHit;
-import com.flansmod.common.guns.raytracing.FlansModRaytracer.DriveableHit;
-import com.flansmod.common.guns.raytracing.FlansModRaytracer.EntityHit;
-import com.flansmod.common.guns.raytracing.FlansModRaytracer.PlayerBulletHit;
-import com.flansmod.common.network.PacketFlak;
-import com.flansmod.common.network.PacketPlaySound;
-import com.flansmod.common.teams.Team;
-import com.flansmod.common.teams.TeamsManager;
-import com.flansmod.common.types.InfoType;
-import com.flansmod.common.vector.Vector3f;
 
 public class EntityBullet extends EntityShootable implements IEntityAdditionalSpawnData {
 	private static int bulletLife = 600; // Kill bullets after 30 seconds
@@ -274,7 +264,12 @@ public class EntityBullet extends EntityShootable implements IEntityAdditionalSp
 		else if(bulletHit instanceof PlayerBulletHit)
 		{
 			PlayerBulletHit playerHit = (PlayerBulletHit)bulletHit;
-			penetratingPower = playerHit.hitbox.hitByBullet(source, shooter, shotFrom, bulletType, damage, penetratingPower);
+			
+			//rare crash fix
+			if(playerHit != null && playerHit.hitbox != null)
+			{
+				penetratingPower = playerHit.hitbox.hitByBullet(source, shooter, shotFrom, bulletType, damage, penetratingPower);
+			}
 			if(FlansMod.DEBUG && world.isRemote)
 				world.spawnEntityInWorld(new EntityDebugDot(world, hit, 1000, 1F, 0F, 0F));
 		}

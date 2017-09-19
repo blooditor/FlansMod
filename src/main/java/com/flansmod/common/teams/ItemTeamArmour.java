@@ -33,7 +33,7 @@ public class ItemTeamArmour extends ItemArmor implements ISpecialArmor, IFlanIte
 	
 	public ItemTeamArmour(ArmourType t)
 	{
-		super(ItemArmor.ArmorMaterial.LEATHER, 0, t.type);
+		super(ItemArmor.ArmorMaterial.IRON, 0, t.type);
 		type = t;
 		type.item = this;
 		setCreativeTab(FlansMod.tabFlanTeams);
@@ -61,6 +61,10 @@ public class ItemTeamArmour extends ItemArmor implements ISpecialArmor, IFlanIte
 	public void damageArmor(EntityLivingBase entity, ItemStack stack, DamageSource source, int damage, int slot) 
 	{
 		//Do nothing to the armour. It should not break as that would leave the player's team ambiguous
+		//In this case damage it
+		this.setDamage(stack, stack.getItemDamage()+damage);
+		if(stack.getItemDamage() > stack.getMaxDamage())
+			stack.stackSize--;
 	}
 
 	@Override

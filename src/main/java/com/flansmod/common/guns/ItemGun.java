@@ -871,6 +871,9 @@ public class ItemGun extends Item implements IPaintableItem
 					if(player.worldObj.isRemote && FlansMod.DEBUG)
 						player.worldObj.spawnEntityInWorld(new EntityDebugVector(player.worldObj, data.lastMeleePositions[k], dPos, 200, 1F, 0F, 0F));
 					
+					try{
+						
+					
 					//Do the raytrace
 					{
 						//Create a list for all bullet hits
@@ -940,7 +943,7 @@ public class ItemGun extends Item implements IPaintableItem
 							else
 							{
 								Entity e = (Entity)obj;
-								if(e != player && !e.isDead && (e instanceof EntityLivingBase || e instanceof EntityAAGun))
+								if(e != player && !e.isDead && (e instanceof EntityLivingBase || e instanceof EntityAAGun) && e != null && e.getEntityBoundingBox() != null && data.lastMeleePositions != null && nextPosInWorldCoords != null)
 								{
 									MovingObjectPosition mop = e.getEntityBoundingBox().calculateIntercept(data.lastMeleePositions[k].toVec3(), nextPosInWorldCoords.toVec3());
 									if(mop != null)
@@ -1018,7 +1021,11 @@ public class ItemGun extends Item implements IPaintableItem
 					//End raytrace
 					
 					data.lastMeleePositions[k] = nextPosInWorldCoords;
-				}
+					}catch(Exception e){
+						e.printStackTrace();
+					}
+					}
+					
 				
 				//Increment the progress meter
 				data.meleeProgress++;
@@ -1362,4 +1369,5 @@ public class ItemGun extends Item implements IPaintableItem
     {
         return false;
     }
+	
 }

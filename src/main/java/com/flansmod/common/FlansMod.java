@@ -290,7 +290,7 @@ public class FlansMod
 		EntityRegistry.registerGlobalEntityID(EntityWheel.class, "Wheel", EntityRegistry.findGlobalUniqueEntityId());
 		EntityRegistry.registerModEntity(EntityWheel.class, "Wheel", 103, this, 250, 20, false);
 		EntityRegistry.registerGlobalEntityID(EntityParachute.class, "Parachute", EntityRegistry.findGlobalUniqueEntityId());
-		EntityRegistry.registerModEntity(EntityParachute.class, "Parachute", 101, this, 40, 20, false);
+		EntityRegistry.registerModEntity(EntityParachute.class, "Parachute", 101, this, 250, 20, false);
 		EntityRegistry.registerGlobalEntityID(EntityMecha.class, "Mecha", EntityRegistry.findGlobalUniqueEntityId());
 		EntityRegistry.registerModEntity(EntityMecha.class, "Mecha", 102, this, 250, 20, false);
 		

@@ -24,6 +24,9 @@ public class EntityParachute extends Entity implements IEntityAdditionalSpawnDat
 		super(w);
 		ignoreFrustumCheck = true;
 		System.out.println(w.isRemote ? "Client paraspawn" : "Server paraspawn");
+		
+		//increase render distance
+		renderDistanceWeight = 250D;
 	}
 	
 	public EntityParachute(World w, ToolType t, EntityPlayer player)

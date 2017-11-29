@@ -306,7 +306,7 @@ public class ItemGun extends Item implements IPaintableItem
 		{				
 			//Cycle selection
 			int dWheel = Mouse.getDWheel();
-			if(mc.gameSettings.keyBindSneak.isPressed() && dWheel != 0)
+			if(mc.gameSettings.keyBindSneak.isKeyDown() && dWheel != 0) //isKeyDown for 1.8
 			{
 				data.cycleOffHandItem(player, dWheel);
 			}
@@ -817,10 +817,13 @@ public class ItemGun extends Item implements IPaintableItem
 				{
 					hasOffHand = true;
 					ItemStack offHandGunStack = player.inventory.getStackInSlot(data.offHandGunSlot - 1);
-					if(offHandGunStack != null && offHandGunStack.getItem() instanceof ItemGun)
+					//also checks if the off hand gun is a one hand gun, if not, remove it
+					if(offHandGunStack != null && offHandGunStack.getItem() instanceof ItemGun && ((ItemGun)offHandGunStack.getItem()).GetType() != null && ((ItemGun)offHandGunStack.getItem()).GetType().oneHanded)
 					{
-						GunType offHandGunType = ((ItemGun)offHandGunStack.getItem()).type;
 						((ItemGun)offHandGunStack.getItem()).onUpdateEach(offHandGunStack, data.offHandGunSlot - 1, world, entity, true, hasOffHand);
+					}else{
+						hasOffHand = false;
+						data.offHandGunSlot = 0;
 					}
 				}
 			}

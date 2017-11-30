@@ -930,10 +930,12 @@ public abstract class EntityDriveable extends Entity implements IControllable, I
 		if(riddenByEntity != null)
 			riddenByEntity.fallDistance = 0F;
 		
-		boolean canThrust = driverIsCreative() || driveableData.fuelInTank > 0;
+		
+		boolean canThrust = (seats[0] != null && seats[0].riddenByEntity instanceof EntityPlayer && ((EntityPlayer)seats[0].riddenByEntity).capabilities.isCreativeMode) || driveableData.fuelInTank > 0;
 
 		//If there's no player in the driveable or it cannot thrust, slow the plane and turn off mouse held actions
-		if((seats[0] != null && seats[0].riddenByEntity == null) || !canThrust && getDriveableType().maxThrottle != 0 && getDriveableType().maxNegativeThrottle != 0)
+		//fixed being able to drive backwards without fuel
+		if((seats[0] != null && seats[0].riddenByEntity == null) || !canThrust)
 		{
 			throttle *= 0.98F;
 			rightMouseHeld = leftMouseHeld = false;

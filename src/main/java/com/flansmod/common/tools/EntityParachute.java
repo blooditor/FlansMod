@@ -34,6 +34,16 @@ public class EntityParachute extends Entity implements IEntityAdditionalSpawnDat
 		this(w);
 		type = t;
 		setPosition(player.posX, player.posY, player.posZ);
+		
+		//Give the parachute some horizontal speed on opening, depending on his y speed
+		float speedMultiplier = 0.050F;
+		double moveForwards = player.moveForward - 10*player.motionY;
+		double moveStrafing = player.moveStrafing;
+		double sinYaw = -Math.sin((player.rotationYaw * (float)Math.PI / 180.0F));
+		double cosYaw = Math.cos((player.rotationYaw * (float)Math.PI / 180.0F));
+		motionX += (moveForwards * sinYaw + moveStrafing * cosYaw) * speedMultiplier;
+		motionZ += (moveForwards * cosYaw - moveStrafing * sinYaw) * speedMultiplier;
+		motionY = player.motionY;
 	}
 
 	@Override
@@ -49,11 +59,16 @@ public class EntityParachute extends Entity implements IEntityAdditionalSpawnDat
 		if(riddenByEntity != null)
 			riddenByEntity.fallDistance = 0F;
 		
-		motionY = -0.1D;
+		//smoothly slowing down after opening
+		if(motionY < -0.1D)
+			motionY *= 0.85d;
+		
+		if(motionY > -0.1D)
+			motionY = -0.1D;
 		
 		if(riddenByEntity != null && riddenByEntity instanceof EntityLivingBase)
 		{
-			float speedMultiplier = 0.002F;
+			float speedMultiplier = 0.050F; //a bit more speed
 			double moveForwards = ((EntityLivingBase)this.riddenByEntity).moveForward;
 			double moveStrafing = ((EntityLivingBase)this.riddenByEntity).moveStrafing;
 			double sinYaw = -Math.sin((riddenByEntity.rotationYaw * (float)Math.PI / 180.0F));
@@ -65,8 +80,24 @@ public class EntityParachute extends Entity implements IEntityAdditionalSpawnDat
 			rotationYaw = riddenByEntity.rotationYaw;
 		}		
 		
-		motionX *= 0.8F;
-		motionZ *= 0.8F;
+		//slowly loosing horizontal speed
+		motionX *= 0.99F;
+		motionZ *= 0.99F;
+			
+		//max horizontal speed
+		if(motionX > 0.55)
+			motionX = 0.55f;
+		if(motionZ > 0.55)
+			motionZ = 0.55f;
+		
+		if(motionX < -0.55)
+			motionX = -0.55f;
+		if(motionZ < -0.55)
+			motionZ = -0.55f;
+		
+		//horizontally faster -> going down faster
+		motionY = motionY-(Math.max(-motionX, motionX)/8)-(Math.max(-motionZ, motionZ)/8);
+		
 		
 		moveEntity(motionX, motionY, motionZ);
 		
@@ -79,7 +110,9 @@ public class EntityParachute extends Entity implements IEntityAdditionalSpawnDat
 	@Override
 	public void fall(float par1, float k)
     {
-		//Ignore fall damage
+		//Hurting player on rough landings
+		if(this.motionY < -0.3 && this.riddenByEntity != null)
+			this.riddenByEntity.attackEntityFrom(DamageSource.fall, -(float) (this.motionY*10));
 	}
 	
 	@Override
